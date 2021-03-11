@@ -22,8 +22,6 @@ class Home extends Component {
   }
 
   loadPosts = async () => {
-    const { page, postsPerPage } = this.state;
-
     const postsAndPhotos = await loadPosts();
     this.setState({
       posts: postsAndPhotos.slice(0, 2),
