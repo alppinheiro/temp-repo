@@ -44,8 +44,6 @@ class Home extends Component {
     posts.push(...nextPosts);
 
     this.setState({ posts, page: nextPage });
-
-    console.log(page, postsPerPage, nextPage, nextPage + postsPerPage);
   }
 
   handleChange = (e) => {
@@ -59,8 +57,6 @@ class Home extends Component {
 
     const filteredPosts = !!searchValue ?
       posts.filter(post => {
-        page = 0
-        postsPerPage = 0
         return post.title.toLowerCase()
           .includes(searchValue.toLowerCase());
       })
